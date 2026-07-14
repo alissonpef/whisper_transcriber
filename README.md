@@ -12,7 +12,7 @@
 <!-- LOGOTIPO DO PROJETO -->
 <br />
 <div align="center">
-  <a href="https://github.com/alissonpef/Whisper-Transcriber">
+  <a href="https://github.com/alissonpef/whisper_transcriber">
     <img src="assets/icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -21,12 +21,12 @@
   <p align="center">
     Uma ferramenta poderosa e elegante para transcrição de áudio local com refinamento por IA.
     <br />
-    <a href="https://github.com/alissonpef/Whisper-Transcriber"><strong>Explore a documentação »</strong></a>
+    <a href="https://github.com/alissonpef/whisper_transcriber"><strong>Explore a documentação »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/alissonpef/Whisper-Transcriber/issues">Reportar Bug</a>
+    <a href="https://github.com/alissonpef/whisper_transcriber/issues">Reportar Bug</a>
     &middot;
-    <a href="https://github.com/alissonpef/Whisper-Transcriber/issues">Solicitar Recurso</a>
+    <a href="https://github.com/alissonpef/whisper_transcriber/issues">Solicitar Recurso</a>
   </p>
 </div>
 
@@ -58,7 +58,7 @@
 
 ## Sobre O Projeto
 
-[![Captura de Tela do Produto][product-screenshot]](https://github.com/alissonpef/Whisper-Transcriber)
+[![Captura de Tela do Produto][product-screenshot]](https://github.com/alissonpef/whisper_transcriber)
 
 O **Transcritor Whisper** é uma aplicação desktop desenvolvida para transformar sua voz em texto de forma instantânea e privada. Utilizando modelos de última geração rodando localmente, ele garante que seus dados nunca saiam da sua máquina.
 
@@ -114,8 +114,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/alissonpef/Whisper-Transcriber.git
-   cd Whisper-Transcriber
+   git clone https://github.com/alissonpef/whisper_transcriber.git
+   cd whisper_transcriber
    ```
 2. Sincronize e crie o ambiente virtual com as dependências usando `uv`:
    ```sh
@@ -164,8 +164,8 @@ Não se esqueça de dar uma estrela ao projeto! Obrigado novamente!
 
 ### Principais contribuidores:
 
-<a href="https://github.com/alissonpef/Whisper-Transcriber/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=alissonpef/Whisper-Transcriber" alt="imagem contrib.rocks" />
+<a href="https://github.com/alissonpef/whisper_transcriber/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=alissonpef/whisper_transcriber" alt="imagem contrib.rocks" />
 </a>
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
@@ -184,7 +184,7 @@ Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
 
 Alisson Pereira Ferreira - alissonpef@gmail.com - [LinkedIn](https://www.linkedin.com/in/alisson-pereira-ferreira/)
 
-Link do Projeto: [https://github.com/alissonpef/Whisper-Transcriber](https://github.com/alissonpef/Whisper-Transcriber)
+Link do Projeto: [https://github.com/alissonpef/whisper_transcriber](https://github.com/alissonpef/whisper_transcriber)
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
@@ -193,16 +193,16 @@ Link do Projeto: [https://github.com/alissonpef/Whisper-Transcriber](https://git
 Made with ❤️ by **Alisson Pereira**.
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
-[contributors-url]: https://github.com/alissonpef/Whisper-Transcriber/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
-[forks-url]: https://github.com/alissonpef/Whisper-Transcriber/network/members
-[stars-shield]: https://img.shields.io/github/stars/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
-[stars-url]: https://github.com/alissonpef/Whisper-Transcriber/stargazers
-[issues-shield]: https://img.shields.io/github/issues/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
-[issues-url]: https://github.com/alissonpef/Whisper-Transcriber/issues
-[license-shield]: https://img.shields.io/github/license/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
-[license-url]: https://github.com/alissonpef/Whisper-Transcriber/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/alissonpef/whisper_transcriber.svg?style=for-the-badge
+[contributors-url]: https://github.com/alissonpef/whisper_transcriber/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/alissonpef/whisper_transcriber.svg?style=for-the-badge
+[forks-url]: https://github.com/alissonpef/whisper_transcriber/network/members
+[stars-shield]: https://img.shields.io/github/stars/alissonpef/whisper_transcriber.svg?style=for-the-badge
+[stars-url]: https://github.com/alissonpef/whisper_transcriber/stargazers
+[issues-shield]: https://img.shields.io/github/issues/alissonpef/whisper_transcriber.svg?style=for-the-badge
+[issues-url]: https://github.com/alissonpef/whisper_transcriber/issues
+[license-shield]: https://img.shields.io/github/license/alissonpef/whisper_transcriber.svg?style=for-the-badge
+[license-url]: https://github.com/alissonpef/whisper_transcriber/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/alisson-pereira-ferreira/
 [product-screenshot]: assets/image.png

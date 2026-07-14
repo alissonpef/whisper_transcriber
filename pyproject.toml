@@ -1,5 +1,5 @@
 [project]
-name = "whisper-transcriber"
+name = "whisper_transcriber"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
