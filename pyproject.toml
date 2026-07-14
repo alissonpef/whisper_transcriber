@@ -1,0 +1,32 @@
+[project]
+name = "whisper-transcriber"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "faster-whisper>=1.0.0",
+    "llama-cpp-python>=0.3.21",
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "pynput>=1.7.6",
+    "pyperclip>=1.8.2",
+    "pystray>=0.19.5",
+    "sounddevice>=0.4.6",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.21",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"
+
