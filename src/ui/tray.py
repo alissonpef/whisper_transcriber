@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import contextlib
 import threading
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 from src.logger import get_logger
 
@@ -75,10 +76,8 @@ class TrayIcon:
 
     def stop(self) -> None:
         if self._icon is not None:
-            try:
+            with contextlib.suppress(Exception):
                 self._icon.stop()
-            except Exception:
-                pass
             self._icon = None
         logger.debug("System tray icon stopped")
 

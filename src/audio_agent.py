@@ -28,7 +28,7 @@ class AudioAgent:
     ) -> None:
         self._queue: queue.Queue[NDArray[np.float32]] = queue_obj
         self._config: AudioConfig = config
-        self._on_level = on_level  # Callable[[float], None] for waveform
+        self._on_level = on_level
         self._stream: Any | None = None
         self._state_recording: bool = False
         self._state_lock = threading.Lock()

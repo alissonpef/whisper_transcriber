@@ -3,12 +3,13 @@ from __future__ import annotations
 import copy
 import queue
 import threading
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 import numpy as np
 from numpy.typing import NDArray
 
-from src.config import AUDIO, MODEL, ModelConfig
+from src.config import AUDIO, ModelConfig
 from src.logger import get_logger
 
 logger = get_logger(__name__)

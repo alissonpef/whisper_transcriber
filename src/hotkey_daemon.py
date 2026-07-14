@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import contextlib
 import os
 import signal
 import subprocess
@@ -27,10 +28,8 @@ def _write_daemon_lock() -> None:
 
 
 def _release_daemon_lock() -> None:
-    try:
+    with contextlib.suppress(OSError):
         DAEMON_LOCK_FILE.unlink(missing_ok=True)
-    except OSError:
-        pass
 
 
 def send_signal_to_popup() -> None:

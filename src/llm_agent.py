@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import threading
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from src.logger import get_logger
 
@@ -14,13 +15,18 @@ class LLMAgent:
 
     SYSTEM_PROMPT = (
         "Você é um revisor de texto profissional especialista em refinar transcrições de áudio. "
-        "Sua tarefa é transformar a transcrição bruta em um texto fluido, coeso e gramaticalmente correto. "
+        "Sua tarefa é transformar a transcrição bruta em um "
+        "texto fluido, coeso e gramaticalmente correto. "
         "Regras obrigatórias:\n"
-        "1. Remova TODAS as repetições de palavras, gaguejos, hesitações e vícios de linguagem (ex: 'né', 'tipo', 'tá', 'então', 'eh', 'sei lá').\n"
+        "1. Remova TODAS as repetições de palavras, gaguejos, hesitações "
+        "e vícios de linguagem (ex: 'né', 'tipo', 'tá', 'então', 'eh', 'sei lá').\n"
         "2. Corrija a pontuação, acentuação e erros ortográficos.\n"
-        "3. Melhore a conexão das frases (coesão), reescrevendo trechos confusos ou enrolados para que fiquem claros e diretos.\n"
-        "4. Mantenha a ideia central e o significado original, mas não tenha medo de reestruturar a frase para que fique bem escrita.\n"
-        "5. RETORNE APENAS O TEXTO CORRIGIDO. NUNCA converse com o usuário, não faça resumos e não adicione notas."
+        "3. Melhore a conexão das frases (coesão), reescrevendo "
+        "trechos confusos ou enrolados para que fiquem claros e diretos.\n"
+        "4. Mantenha a ideia central e o significado original, mas não "
+        "tenha medo de reestruturar a frase para que fique bem escrita.\n"
+        "5. RETORNE APENAS O TEXTO CORRIGIDO. NUNCA converse com o "
+        "usuário, não faça resumos e não adicione notas."
     )
 
     def __init__(self) -> None:

@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import tkinter as tk
+from collections.abc import Callable
 from tkinter import ttk
-from typing import Any, Callable, Literal
+from typing import Any, Literal
+
 from src.ui.theme import Theme
 
 ButtonVariant = Literal["primary", "danger", "ghost"]
@@ -286,7 +288,7 @@ class AudioWaveform(tk.Frame):
         if not self._running:
             return
 
-        rms = min(self._latest_rms * 8.0, 1.0)  # Amplify and clamp.
+        rms = min(self._latest_rms * 8.0, 1.0)
         self._levels.pop(0)
         self._levels.append(rms)
 
@@ -301,8 +303,6 @@ class AudioWaveform(tk.Frame):
             y0 = self.HEIGHT - bar_h
             x0 = i * (self.BAR_WIDTH + self.BAR_GAP)
             x1 = x0 + self.BAR_WIDTH
-            color = (
-                self.COLOR_ACTIVE if self._running and level > 0.02 else self.COLOR_IDLE
-            )
+            color = self.COLOR_ACTIVE if self._running and level > 0.02 else self.COLOR_IDLE
             self._canvas.coords(self._bars[i], x0, y0, x1, self.HEIGHT)
             self._canvas.itemconfig(self._bars[i], fill=color)

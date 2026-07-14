@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import contextlib
 import sys
 
 
@@ -22,10 +23,8 @@ def main() -> None:
 
         pid = get_pid()
         if pid is not None:
-            try:
+            with contextlib.suppress(ProcessLookupError, PermissionError):
                 os.kill(pid, signal.SIGUSR1)
-            except (ProcessLookupError, PermissionError):
-                pass
         sys.exit(0)
 
 

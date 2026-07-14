@@ -44,7 +44,7 @@ def _try_create_lock(path: Path, pid: int) -> bool:
     fd: int | None = None
     try:
         fd = os.open(path, flags)
-        os.write(fd, f"{pid}".encode("utf-8"))
+        os.write(fd, f"{pid}".encode())
         return True
     except FileExistsError:
         return False

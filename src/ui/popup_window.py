@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import contextlib
 import queue
 import signal
 import threading
@@ -35,9 +36,7 @@ class PopupWindow:
         self._state: str = "LOADING"
         self._closing: bool = False
         self._recording: bool = False
-        self._auto_start_recording: bool = bool(
-            auto_start_recording or UI.auto_start_recording
-        )
+        self._auto_start_recording: bool = bool(auto_start_recording or UI.auto_start_recording)
         self._model_ready: bool = False
         self._drag_x: int = 0
         self._drag_y: int = 0
@@ -182,9 +181,7 @@ class PopupWindow:
             highlightthickness=0,
         )
         self.dot_canvas.pack(side=tk.LEFT, padx=(14, 8))
-        self.dot_id = self.dot_canvas.create_oval(
-            3, 3, 13, 13, fill=Theme.COLOR_IDLE, outline=""
-        )
+        self.dot_id = self.dot_canvas.create_oval(3, 3, 13, 13, fill=Theme.COLOR_IDLE, outline="")
         self.dot_animator = StatusDotAnimator(self.root, self.dot_canvas, self.dot_id)
 
         self.title_label = tk.Label(
@@ -305,9 +302,7 @@ class PopupWindow:
         self.root.bind("<Escape>", lambda _event: self._on_minimize())
         self.root.bind("<Control-Shift-C>", lambda _event: self._on_copy_all())
         self.root.bind("<Control-Shift-L>", lambda _event: self._on_clear())
-        self.root.bind(
-            "<Control-Shift-space>", lambda _event: self._on_toggle_recording()
-        )
+        self.root.bind("<Control-Shift-space>", lambda _event: self._on_toggle_recording())
 
     def _register_hotkey_signal(self) -> None:
         sigusr1 = getattr(signal, "SIGUSR1", None)
@@ -399,9 +394,7 @@ class PopupWindow:
     def _on_model_failed(self, reason: str) -> None:
         self.loading.hide()
         self._set_visual_state("IDLE")
-        self.status_bar.set_state(
-            f"Erro ao carregar modelo: {reason}", Theme.COLOR_RECORDING
-        )
+        self.status_bar.set_state(f"Erro ao carregar modelo: {reason}", Theme.COLOR_RECORDING)
 
     def _on_toggle_recording(self) -> None:
         if self._closing or not self._model_ready:
@@ -420,9 +413,7 @@ class PopupWindow:
             self.audio_agent.start()
         except Exception:
             logger.exception("Failed to start audio agent")
-            self.status_bar.set_state(
-                "Erro: microfone indisponível", Theme.COLOR_RECORDING
-            )
+            self.status_bar.set_state("Erro: microfone indisponível", Theme.COLOR_RECORDING)
             return
 
         self._recording = True
@@ -465,9 +456,7 @@ class PopupWindow:
         self.transcript.clear()
 
         def _on_chunk(chunk: str) -> None:
-            self.root.after(
-                0, lambda: self.transcript.text_widget.insert(tk.END, chunk)
-            )
+            self.root.after(0, lambda: self.transcript.text_widget.insert(tk.END, chunk))
             self.root.after(0, lambda: self.transcript.text_widget.see(tk.END))
 
         def _on_done() -> None:
@@ -561,10 +550,8 @@ class PopupWindow:
         except Exception:
             logger.exception("Error stopping tray icon")
 
-        try:
+        with contextlib.suppress(Exception):
             self.dot_animator.stop()
-        except Exception:
-            pass
 
         release()
 
