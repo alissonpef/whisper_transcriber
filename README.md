@@ -1,6 +1,15 @@
 <a id="readme-top"></a>
 
-<!-- PROJECT LOGO -->
+<!-- ESCUDOS DO PROJETO -->
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<!-- LOGOTIPO DO PROJETO -->
 <br />
 <div align="center">
   <a href="https://github.com/alissonpef/Whisper-Transcriber">
@@ -12,140 +21,201 @@
   <p align="center">
     Uma ferramenta poderosa e elegante para transcrição de áudio local com refinamento por IA.
     <br />
-    <a href="#uso"><strong>Explorar funcionalidades »</strong></a>
+    <a href="https://github.com/alissonpef/Whisper-Transcriber"><strong>Explore a documentação »</strong></a>
     <br />
     <br />
-    <a href="#demonstração">Ver Demo</a>
-    &middot;
     <a href="https://github.com/alissonpef/Whisper-Transcriber/issues">Reportar Bug</a>
     &middot;
-    <a href="https://github.com/alissonpef/Whisper-Transcriber/issues">Sugerir Recurso</a>
+    <a href="https://github.com/alissonpef/Whisper-Transcriber/issues">Solicitar Recurso</a>
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
+<!-- ÍNDICE -->
 <details>
-  <summary>Sumário</summary>
+  <summary>Índice</summary>
   <ol>
     <li>
-      <a href="#sobre-o-projeto">Sobre o Projeto</a>
+      <a href="#sobre-o-projeto">Sobre O Projeto</a>
       <ul>
-        <li><a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a></li>
+        <li><a href="#construído-com">Construído Com</a></li>
       </ul>
     </li>
     <li>
-      <a href="#primeiros-passos">Primeiros Passos</a>
+      <a href="#começando">Começando</a>
       <ul>
         <li><a href="#pré-requisitos">Pré-requisitos</a></li>
         <li><a href="#instalação">Instalação</a></li>
       </ul>
     </li>
-    <li><a href="#uso">Como Usar</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#uso">Uso</a></li>
+    <li><a href="#contribuindo">Contribuindo</a></li>
     <li><a href="#licença">Licença</a></li>
     <li><a href="#contato">Contato</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## Sobre o Projeto
+<!-- SOBRE O PROJETO -->
 
-<div align="center">
-  <img src="assets/image.png" alt="Screenshot do Projeto" width="100%">
-</div>
+## Sobre O Projeto
+
+[![Captura de Tela do Produto][product-screenshot]](https://github.com/alissonpef/Whisper-Transcriber)
 
 O **Transcritor Whisper** é uma aplicação desktop desenvolvida para transformar sua voz em texto de forma instantânea e privada. Utilizando modelos de última geração rodando localmente, ele garante que seus dados nunca saiam da sua máquina.
 
 ### Principais Características:
 * **Privacidade Total:** Processamento 100% local (Whisper + LLM Local).
-* **Refinamento por IA:** Botão "Reescrever" que utiliza um modelo Qwen para limpar gaguejos, vícios de linguagem e melhorar a coesão do texto.
-* **Agilidade:** Atalho global (`Ctrl+Shift+Espaço`) para iniciar/parar gravações de qualquer lugar.
+* **Refinamento por IA:** Botão "Reescrever" que utiliza um modelo Qwen local para limpar gaguejos, vícios de linguagem e melhorar a coesão do texto.
+* **Agilidade:** Atalho global (`Ctrl+Shift+Espaço`) para iniciar/parar gravações de qualquer lugar do sistema.
 * **Interface Moderna:** Design escuro e minimalista com animações fluidas e visualização de ondas sonoras em tempo real.
 * **Resiliência:** Suporte a aceleração por hardware (CUDA) com fallback automático para CPU.
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-### Tecnologias Utilizadas
+### Construído Com
 
-O projeto utiliza o que há de mais moderno em IA local e desenvolvimento Python:
+Esta seção lista as tecnologias principais e bibliotecas utilizadas neste projeto:
 
 * [![Python][Python-shield]][Python-url]
-* [![Faster-Whisper][Whisper-shield]][Whisper-url]
-* [![Llama.cpp][Llama-shield]][Llama-url]
 * [![Tkinter][Tkinter-shield]][Tkinter-url]
+* [![Faster-Whisper][Whisper-shield]][Whisper-url]
+* [![Llama-cpp-python][Llama-shield]][Llama-url]
+* [![Sounddevice][Sounddevice-shield]][Sounddevice-url]
+* [![NumPy][NumPy-shield]][NumPy-url]
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-<!-- GETTING STARTED -->
-## Primeiros Passos
+<!-- COMEÇANDO -->
 
-Para configurar o Transcritor localmente, siga estes passos simples.
+## Começando
+
+Siga os passos abaixo para configurar e executar o Transcritor Whisper localmente.
 
 ### Pré-requisitos
 
-O projeto foi desenvolvido para Linux (especialmente distros baseadas em Debian/Ubuntu).
+O projeto foi desenvolvido para ambientes Linux (especialmente distribuições baseadas em Debian/Ubuntu). Certifique-se de possuir instalado:
+
 * **Python 3.10** ou superior
-* **FFmpeg** (para processamento de áudio)
-* **PortAudio** (para captura de microfone)
+* **uv** (gerenciador de pacotes rápido para Python)
+* **FFmpeg** (utilizado para decodificação de áudio)
+* **PortAudio** (necessário para a biblioteca Sounddevice interagir com o microfone)
+
+Para instalar os pacotes do sistema no Debian/Ubuntu:
+```sh
+sudo apt update
+sudo apt install ffmpeg portaudio19-dev python3-tk
+```
+
+E para instalar o `uv`:
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 ### Instalação
 
-1. Clone o repositório
+1. Clone o repositório:
    ```sh
    git clone https://github.com/alissonpef/Whisper-Transcriber.git
+   cd Whisper-Transcriber
    ```
-2. Entre na pasta do projeto
+2. Sincronize e crie o ambiente virtual com as dependências usando `uv`:
    ```sh
-   cd Transcritor
+   uv sync
    ```
-3. Execute o script de instalação automática
+3. (Opcional) Execute o script de instalação para configurar o daemon e o atalho de inicialização automática:
    ```sh
    ./scripts/install.sh
    ```
-   *O script irá configurar o ambiente virtual, instalar dependências e configurar os atalhos do sistema.*
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-## Como Usar
+<!-- EXEMPLOS DE USO -->
 
-1. **Início Automático:** O daemon de hotkey inicia junto com o sistema.
-2. **Gravação:** Pressione `Ctrl+Shift+Espaço` para abrir a popup e começar a gravar.
-3. **Transcrição:** O texto aparecerá em tempo real. Pressione o atalho novamente para parar.
-4. **Magia da IA:** Clique em **✨ Reescrever** para que a IA local transforme sua transcrição bruta em um texto profissional e fluido.
-5. **Copiar:** Use o botão de copiar ou `Ctrl+Shift+C` para levar o texto para sua área de transferência.
+## Uso
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Suporte a Wayland e X11
-- [x] Integração com LLM Local (Qwen 1.5B)
-- [x] Ícone na bandeja do sistema (Tray Icon)
-- [ ] Suporte a múltiplos idiomas na interface
-- [ ] Exportação direta para arquivos .txt ou .md
-- [ ] Histórico de transcrições recentes
-
-Veja as [issues abertas](https://github.com/alissonpef/Whisper-Transcriber/issues) para uma lista completa de recursos propostos.
+1. **Executando a interface gráfica (Popup):**
+   ```sh
+   uv run python -m src.transcriber_popup
+   ```
+2. **Executando o daemon de atalho global (Hotkey Daemon):**
+   ```sh
+   uv run python -m src.hotkey_daemon
+   ```
+3. **Gravação:** Pressione o atalho global `Ctrl+Shift+Espaço` para exibir a popup e começar a gravar.
+4. **Transcrição:** A transcrição aparecerá em tempo real no visor de texto da popup.
+5. **Reescrita com IA:** Clique em **✨ Reescrever** para acionar o modelo de linguagem local Qwen 1.5B (via Llama-cpp) e purificar sua transcrição bruta.
+6. **Copiar:** Pressione o botão **📋 Copiar** ou o atalho `Ctrl+Shift+C` para enviar a versão refinada diretamente para a área de transferência.
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-<!-- CONTACT -->
+<!-- CONTRIBUINDO -->
+
+## Contribuindo
+
+As contribuições são o que tornam a comunidade open source um lugar tão incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+
+Se você tiver alguma sugestão que tornaria isso melhor, por favor faça o fork do repositório e crie um pull request. Você também pode simplesmente abrir uma issue com a tag "enhancement".
+Não se esqueça de dar uma estrela ao projeto! Obrigado novamente!
+
+1. Faça o Fork do Projeto
+2. Crie a sua Branch de Funcionalidade (`git checkout -b feature/FuncionalidadeIncrivel`)
+3. Commit suas Mudanças (`git commit -m 'Adicione alguma FuncionalidadeIncrivel'`)
+4. Faça o Push para a Branch (`git push origin feature/FuncionalidadeIncrivel`)
+5. Abra um Pull Request
+
+### Principais contribuidores:
+
+<a href="https://github.com/alissonpef/Whisper-Transcriber/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=alissonpef/Whisper-Transcriber" alt="imagem contrib.rocks" />
+</a>
+
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+
+<!-- LICENÇA -->
+
+## Licença
+
+Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
+
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+
+<!-- CONTATO -->
+
 ## Contato
 
-Alisson - [Gmail](alissonpef@gmail.com)
+Alisson Pereira Ferreira - alissonpef@gmail.com - [LinkedIn](https://www.linkedin.com/in/alisson-pereira-ferreira/)
 
 Link do Projeto: [https://github.com/alissonpef/Whisper-Transcriber](https://github.com/alissonpef/Whisper-Transcriber)
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
+---
+
+Made with ❤️ by **Alisson Pereira**.
+
 <!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
+[contributors-url]: https://github.com/alissonpef/Whisper-Transcriber/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
+[forks-url]: https://github.com/alissonpef/Whisper-Transcriber/network/members
+[stars-shield]: https://img.shields.io/github/stars/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
+[stars-url]: https://github.com/alissonpef/Whisper-Transcriber/stargazers
+[issues-shield]: https://img.shields.io/github/issues/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
+[issues-url]: https://github.com/alissonpef/Whisper-Transcriber/issues
+[license-shield]: https://img.shields.io/github/license/alissonpef/Whisper-Transcriber.svg?style=for-the-badge
+[license-url]: https://github.com/alissonpef/Whisper-Transcriber/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/alisson-pereira-ferreira/
+[product-screenshot]: assets/image.png
+
 [Python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [Python-url]: https://www.python.org/
+[Tkinter-shield]: https://img.shields.io/badge/Tkinter-GUI-orange?style=for-the-badge
+[Tkinter-url]: https://docs.python.org/3/library/tkinter.html
 [Whisper-shield]: https://img.shields.io/badge/Faster--Whisper-OpenAI-blue?style=for-the-badge
 [Whisper-url]: https://github.com/SYSTRAN/faster-whisper
 [Llama-shield]: https://img.shields.io/badge/Llama--CPP-AI-green?style=for-the-badge
 [Llama-url]: https://github.com/abetlen/llama-cpp-python
-[Tkinter-shield]: https://img.shields.io/badge/Tkinter-GUI-orange?style=for-the-badge
-[Tkinter-url]: https://docs.python.org/3/library/tkinter.html
+[Sounddevice-shield]: https://img.shields.io/badge/Sounddevice-Audio-red?style=for-the-badge
+[Sounddevice-url]: https://python-sounddevice.readthedocs.io/
+[NumPy-shield]: https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white
+[NumPy-url]: https://numpy.org/
